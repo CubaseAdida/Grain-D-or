@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grain d'Or — Vitrine</title>
+  <meta name="description" content="Grain d'Or — Produits agroalimentaires. Site vitrine professionnel." />
+  <style>
+    :root{
+      --green:#0b6b2f;
+      --gold:#c79c2d;
+      --white:#ffffff;
+      --muted:rgba(0,0,0,0.6);
+      --glass: rgba(255,255,255,0.85);
+      --shadow: 0 8px 30px rgba(2,10,12,0.12);
+      --max-width:1200px;
+      --wh-phone:"+242065236885";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:#0f1724;background:#f7f7f7;line-height:1.5;
+    }
+    /* Hero */
+    .hero{
+      min-height:60vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;
+      background-image:linear-gradient(180deg, rgba(11,107,47,0.55), rgba(11,107,47,0.35)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=60');
+      background-size:cover;background-position:center;color:var(--white);
+    }
+    .container{width:100%;max-width:var(--max-width);margin-inline:auto;padding:0 18px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));backdrop-filter:blur(4px);padding:28px;border-radius:14px;box-shadow:var(--shadow);display:flex;gap:24px;align-items:center}
+    .logo{width:92px;height:92px;border-radius:12px;background:linear-gradient(135deg,var(--gold),#f7e7b6);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b3b18}
+    h1{font-size:28px;margin:0 0 6px}
+    p.lead{margin:0;color:rgba(255,255,255,0.95);max-width:720px}
+
+    /* Section titles */
+    section{padding:48px 0}
+    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .tag{background:var(--gold);padding:6px 10px;border-radius:8px;color:#08220b;font-weight:600}
+    h2{margin:0;font-size:22px}
+
+    /* Product grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+    .card{background:var(--glass);padding:14px;border-radius:12px;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .card .img{height:160px;border-radius:10px;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+    .card:hover .img{transform:scale(1.06) rotate(-1deg)}
+    .card h3{margin:12px 0 6px}
+    .card p{margin:0;color:var(--muted)}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+
+    /* WhatsApp breathing button */
+    .btn-wh{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:none;cursor:pointer;font-weight:700;text-decoration:none;background:linear-gradient(90deg,var(--green),#0f8b46);color:var(--white);box-shadow:0 6px 20px rgba(11,107,47,0.18);
+      animation:breath 2.6s ease-in-out infinite;
+    }
+    @keyframes breath{
+      0%{transform:scale(1)}
+      50%{transform:scale(1.03)}
+      100%{transform:scale(1)}
+    }
+
+    /* News horizontal moving gallery */
+    .news-wrap{overflow:hidden;border-radius:12px}
+    .news-track{display:flex;gap:12px;padding:12px 6px;animation:slide-left 18s linear infinite}
+    .news-item{min-width:340px;flex:0 0 340px;background:var(--glass);border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+    .news-item .media{height:180px;background-size:cover;background-position:center;transform:translateZ(0)}
+    .news-item .body{padding:14px}
+    .news-item h4{margin:0 0 8px}
+    .news-item p{margin:0;color:var(--muted);font-size:14px}
+    @keyframes slide-left{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
+    }
+
+    /* WhatsApp contact form */
+    .contact{display:grid;grid-template-columns:1fr 420px;gap:20px}
+    .form{background:var(--white);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .form label{display:block;font-size:13px;margin-bottom:6px}
+    .form input,.form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:12px;font-size:14px}
+    .form button{width:100%;padding:12px;border-radius:10px;border:none;background:var(--green);color:var(--white);font-weight:700}
+
+    /* Map card */
+    .map-card{border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+
+    /* Footer */
+    footer{background:#071912;color:#dfeee1;padding:26px 0}
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .phone{font-size:18px;font-weight:700}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero-card{flex-direction:column;align-items:flex-start}
+      .contact{grid-template-columns:1fr}
+      .news-track{animation-duration:28s}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <img src="images/logo00.png" alt="Grain d'Or" style="width:150px; height:150px; object-fit:contain; border-radius:20px;"></div>
+        <div>
+          <h1>Grain d'Or — Produits agroalimentaires</h1>
+          <p class="lead">Des céréales, farines et produits locaux sélectionnés pour le goût et la santé. Livraison locale disponible. Nous sommes une entreprise spécialisée dans la transformation agroalimentaire, engagée à valoriser les produits locaux à travers des solutions innovantes, saines et durables. De la récolte à la transformation, nous garantissons qualité, hygiène et goût.</p>
+          <div style="margin-top:12px;display:flex;gap:12px;align-items:center">
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20souhaite%20commander%20vos%20produits" target="_blank" rel="noopener">Commander via WhatsApp</a>
+            <a style="padding:10px 14px;border-radius:10px;background:var(--gold);font-weight:700;text-decoration:none;color:#07220b" href="#produits">Voir les produits</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Présentation -->
+    <section id="apropos">
+      <div class="section-title">
+        <span class="tag">À propos</span>
+        <h2>Qui sommes-nous</h2>
+      </div>
+      <p>Grain d'Or cultive depuis plusieurs années des produits sains et respectueux de l'environnement. Nous collaborons avec des agriculteurs locaux, utilisons des méthodes durables et supervisons chaque étape : semence, récolte, transformation et conditionnement.</p>
+    </section>
+
+    <!-- Partenaires -->
+    <section id="partners">
+      <div class="section-title">
+        <span class="tag">Partenaires</span>
+        <h2>Nos partenaires</h2>
+      </div>
+
+      <!-- Bandeau horizontal de logos (défilement automatique) -->
+      <div style="overflow:hidden;border-radius:12px;padding:10px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));box-shadow:var(--shadow);">
+        <div id="partnersTrack" style="display:flex;gap:18px;align-items:center;will-change:transform;">
+          <!-- remplacez les src par les logos réels -->
+          <img src="images/Sans titre-2.jpg" alt="Partenaire 1" style="height:80px;border-radius:8px;object-fit:contain;background:#fff;padding:8px" />
+          <img src="images/bvbn.png" alt="Partenaire 2" style="height:80px;border-radius:8px;object-fit:contain;background:#fff;padding:8px" />
+          <img src="images/logo00.png" alt="Partenaire 3" style="height:80px;border-radius:8px;object-fit:contain;background:#fff;padding:8px" />
+          <img src="https://via.placeholder.com/180x80?text=Partenaire+4" alt="Partenaire 4" style="height:80px;border-radius:8px;object-fit:contain;background:#fff;padding:8px" />
+          <img src="https://via.placeholder.com/180x80?text=Partenaire+5" alt="Partenaire 5" style="height:80px;border-radius:8px;object-fit:contain;background:#fff;padding:8px" />
+          <!-- duplication pour boucle lisse -->
+          <img src="https://via.placeholder.com/180x80?text=Partenaire+1" alt="Partenaire 1" style="height:80px;border-radius:8px;object-fit:contain;background:#fff;padding:8px" />
+          <img src="https://via.placeholder.com/180x80?text=Partenaire+2" alt="Partenaire 2" style="height:80px;border-radius:8px;object-fit:contain;background:#fff;padding:8px" />
+        </div>
+      </div>
+
+      <script>
+        // simple auto-scroll horizontal animation pour les logos (non bloquant)
+        (function(){
+          const track = document.getElementById('partnersTrack');
+          let pos = 0; const speed = 0.4; // ajustez la vitesse
+          let raf;
+          function loop(){
+            pos -= speed;
+            if(Math.abs(pos) >= track.scrollWidth/2) pos = 0;
+            track.style.transform = `translateX(${pos}px)`;
+            raf = requestAnimationFrame(loop);
+          }
+          track.addEventListener('mouseenter', ()=> cancelAnimationFrame(raf));
+          track.addEventListener('mouseleave', ()=> { raf = requestAnimationFrame(loop); });
+          window.addEventListener('load', ()=> { raf = requestAnimationFrame(loop); });
+        })();
+      </script>
+
+    </section>
+
+    <!-- Produits -->
+    <section id="produits">
+      <div class="section-title">
+        <span class="tag">Produits</span>
+        <h2>Nos produits phares</h2>
+      </div>
+      <div class="grid">
+        <!-- Exemple d'items ; dupliquez/éditez selon vos produits -->
+        <article class="card">
+         <div class="img" style="background-image: url('images/simple 7.jpg');"></div>
+          <h3>Chips de Banane</h3>
+          <p>Les bananes !
+Un fruit délicieux et nutritif qui offre de
+nombreux bienfaits pour la santé.
+
+Bienfaits nutritionnels
+1. Riche en potassium : Les bananes sont une excellente
+source de potassium, un minéral essentiel pour la santé
+cardiaque et musculaire.
+2. Bonne source de fibres : Les bananes contiennent des
+fibres solubles et insolubles qui peuvent aider à réguler le
+transit intestinal.
+3. Riche en vitamines et minéraux : Les bananes sont une
+bonne source de vitamines C et B6, ainsi que de minéraux
+comme le magnésium et le manganèse..</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">À partir de 1 200 FCFA/kg</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20riz">Commander</a>
+          </div>
+        </article>
+
+        <article class="card">
+         <div class="img" style="background-image: url('images/12.jpg');"></div>
+          <h3>Chips de patates douces</h3>
+          <p>Les chips de patates douces sont un aliment
+délicieux et sain qui offre plusieurs bienfaits
+pour la santé. Voici quelques-uns des
+avantages des chips de patates douces :
+
+Avantages nutritionnels
+- Riche en vitamines et minéraux : Les patates douces
+sont une excellente source de vitamines A et C, ainsi que
+de minéraux tels que le potassium et le manganèse.
+- Riche en fibres : Les chips de patates douces
+contiennent des fibres alimentaires qui peuvent aider
+à réguler le transit intestinal et à prévenir la constipation.
+- Faible indice glycémique : Les patates douces ont un
+indice glycémique bas, ce qui signifie qu'elles peuvent
+aider à réguler le taux de sucre dans le sang.</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">À partir de 1 200 FCFA/kg</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20riz">Commander</a>
+          </div>
+        </article>
+
+        <article class="card">
+         <div class="img" style="background-image: url('images/11.jpg');"></div>
+          <h3>Riz de qualité</h3>
+          <p>Riz long grain, trié et emballé selon nos standards de qualité. Disponible en sacs de 5 kg, 10 kg, 25 kg.</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">À partir de 1 200 FCFA/kg</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20riz">Commander</a>
+          </div>
+        </article>
+
+        <article class="card">
+         <div class="img" style="background-image: url('images/10.jpg');"></div>
+          <h3>
+Confit de gingembre</h3>
+          <p>Le confit de gingembre est un produit
+alimentaire qui offre plusieurs bienfaits pour
+la santé, en plus de sa saveur
+délicieuse.
+
+Bienfaits pour la santé
+- Aide à soulager les nausées : Le gingembre est connu
+pour ses propriétés anti-nauséeuses, et le confit de
+gingembre peut aider à soulager les nausées et les
+troubles digestifs.
+- Anti-inflammatoire : Le gingembre contient des
+composés anti-inflammatoires qui peuvent aider à réduire
+les douleurs et les inflammations.
+- Améliore la digestion : Le gingembre peut aider
+à stimuler la digestion et à prévenir les troubles digestifs
+tels que la constipation et la diarrhée.
+- Renforce le système immunitaire : Le gingembre contient
+des vitamines et des minéraux qui peuvent aider
+à renforcer le système immunitaire et à prévenir
+les infections.</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">À partir de 1 200 FCFA/kg</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20riz">Commander</a>
+          </div>
+        </article>
+
+        <article class="card">
+         <div class="img" style="background-image: url('images/simple 9.jpg');"></div>
+          <h3>Chips de coco au gingembre</h3>
+          <p>Le coco au gingembre !
+Un mélange délicieux et médicinal qui offre de
+nombreux bienfaits pour la santé.
+
+Bienfaits pour la santé
+1. Anti-inflammatoire : Le gingembre contenu dans le
+coco au gingembre peut aider à réduire l'inflammation et
+à soulager les douleurs.
+2. Digestif : Le coco et le gingembre peuvent aider à
+soulager les problèmes digestifs tels que les nausées, les
+ballonnements et les crampes abdominales.
+3. Antioxidant : Le coco et le gingembre contiennent des
+antioxydants qui peuvent aider à protéger les cellules
+contre les dommages causés par les radicaux libres.
+4. Soutient la santé immunitaire : Le coco et le gingembre
+contiennent des composés qui peuvent aider à stimuler
+le système immunitaire et à prévenir les infections..</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">À partir de 1 200 FCFA/kg</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20riz">Commander</a>
+          </div>
+        </article>
+
+        <article class="card">
+         <div class="img" style="background-image: url('images/simple 2.jpg');"></div>
+          <h3>Courge</h3>
+          <p>Bienfaits nutritionnels
+1. Riche en vitamines et minéraux : La courge
+est une excellente source de vitamines A et C,
+ainsi que de minéraux comme le potassium
+et le magnésium.
+2. Faible en calories : La courge est très faible en calories,
+ce qui en fait un excellent choix pour les régimes
+amaigrissants.
+3. Riche en fibres : La courge contient des fibres solubles
+et insolubles qui peuvent aider à réguler le transit
+intestinal.
+
+Bienfaits pour la santé
+1. Améliore la vision : La courge est riche en vitamine A,
+qui est essentielle pour la santé des yeux et peut aider
+à prévenir les problèmes de vision liés à l'âge.
+2. Renforce le système immunitaire : La vitamine C
+contenue dans la courge peut aider à stimuler le système
+immunitaire et à protéger contre les infections..</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">À partir de 1 200 FCFA/kg</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20riz">Commander</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img" style="background-image: url('images/simple 1.jpg');"></div>
+          <h3>Chips COCO</h3>
+          <p>Les chips de coco sont un aliment délicieux
+et sain qui offre plusieurs bienfaits pour
+la santé. Voici quelques-uns des avantages
+des chips de coco :
+
+Avantages nutritionnels
+- Riche en fibres : Les chips de coco sont une bonne
+source de fibres alimentaires, ce qui peut aider à réguler
+le transit intestinal et à prévenir la constipation.
+- Source de graisses saines : Les chips de coco
+contiennent des graisses saines, notamment des acides
+gras à chaîne moyenne (AGCM) qui sont facilement
+absorbés par l'organisme.
+- Riche en minéraux : Les chips de coco sont une bonne
+source de minéraux tels que le manganèse, le cuivre et
+le sélénium.
+</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">Bouteille 1 L</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20de%20l%27huile">Commander</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img" style="background-image: url('images/simple 3.jpg');"></div>
+          <h3>Gombo en poudree</h3>
+          <p>Le gombo est un légume riche en nutriments,
+notamment en vitamines A et C, en fibres
+et en antioxydants.
+
+Bienfaits du gombo pour la santé
+1. Riche en antioxydants : Le gombo contient
+des antioxydants qui aident à protéger les cellules
+contre les dommages causés par les radicaux libres.
+2. Améliore la digestion : Les fibres contenues
+dans le gombo peuvent aider à réguler le transit intestinal
+et à prévenir la constipation.
+3. Peut aider à contrôler le diabète : Le gombo contient
+des fibres et des composés qui peuvent aider à réguler
+le taux de sucre dans le sang.
+4. Soutient la santé cardiaque : Les fibres et les
+antioxydants contenus dans le gombo peuvent aider
+à réduire le risque de maladies cardiaques..</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">Sacs 2 kg / 10 kg</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20de%20la%20farine">Commander</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img" style="background-image: url('images/simple 4.jpg');"></div>
+          <h3>Piment en poudre</h3>
+          <p>Un ingrédient piquant et savoureux qui offre de nombreux bienfaits pour la santé. Voici quelques-uns des principaux avantages de consommer du piment :
+
+Bienfaits pour la santé
+1. Anti-inflammatoire : Le piment contient des composés anti-inflammatoires qui peuvent aider à réduire l'inflammation et à soulager les douleurs.
+2. Antimicrobien : Le piment a des propriétés antimicrobiennes qui peuvent aider à combattre les bactéries et les virus.
+3. Améliore la circulation sanguine : Le piment contient de la capsaïcine, qui peut aider à dilater les vaisseaux sanguins et à améliorer la circulation sanguine.
+4. Peut aider à perdre du poids : La capsaïcine contenue dans le piment peut aider à augmenter le métabolisme et à réduire l'appétit.
+5. Soutient la santé digestive : Le piment peut aider à stimuler la digestion et à prévenir les problèmes digestifs.
+</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">Pot 500g</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20miel">Commander</a>
+          </div>
+        </article>
+
+    <article class="card">
+          <div class="img" style="background-image: url('images/simple 5.jpg');"></div>
+          <h3>Gingembre en poudre</h3>
+          <p>Le gingembre !
+Une racine médicinale qui offre de nombreux
+bienfaits pour la santé.
+
+Bienfaits pour la santé
+1. Anti-inflammatoire : Le gingembre contient
+des composés anti-inflammatoires qui peuvent aider
+à réduire l'inflammation et à soulager les douleurs.
+2. Antioxidant : Le gingembre est riche en antioxydants
+qui peuvent aider à protéger les cellules contre
+les dommages causés par les radicaux libres.
+3. Digestif : Le gingembre peut aider à soulager
+les problèmes digestifs tels que les nausées,
+les ballonnements et les crampes abdominales.
+4. Anti-nauséeux : Le gingembre est souvent utilisé pour
+prévenir les nausées et les vomissements, notamment
+chez les femmes enceintes et les personnes qui suivent
+une chimiothérapie.
+5. Peut aider à réduire les douleurs : Le gingembre contient
+des composés qui peuvent aider à réduire les douleurs
+articulaires et musculaires.</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">Pot 500g</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20miel">Commander</a>
+          </div>
+        </article>
+<article class="card">
+          <div class="img" style="background-image: url('images/simple 6.jpg');"></div>
+          <h3>tomate en poudre</h3>
+          <p>Un ingrédient piquant et savoureux qui offre de nombreux bienfaits pour la santé. Voici quelques-uns des principaux avantages de consommer du piment :
+
+Bienfaits pour la santé
+1. Anti-inflammatoire : Le piment contient des composés anti-inflammatoires qui peuvent aider à réduire l'inflammation et à soulager les douleurs.
+2. Antimicrobien : Le piment a des propriétés antimicrobiennes qui peuvent aider à combattre les bactéries et les virus.
+3. Améliore la circulation sanguine : Le piment contient de la capsaïcine, qui peut aider à dilater les vaisseaux sanguins et à améliorer la circulation sanguine.
+4. Peut aider à perdre du poids : La capsaïcine contenue dans le piment peut aider à augmenter le métabolisme et à réduire l'appétit.
+5. Soutient la santé digestive : Le piment peut aider à stimuler la digestion et à prévenir les problèmes digestifs.
+</p>
+          <div class="meta">
+            <span style="font-weight:700;color:var(--green)">Pot 500g</span>
+            <a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20du%20miel">Commander</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+
+    <!-- Actualités -->
+    <section id="actualites">
+      <div class="section-title">
+        <span class="tag">Actualités</span>
+        <h2>Nos dernières nouvelles</h2>
+      </div>
+
+      <div class="news-wrap">
+        <div class="news-track" id="newsTrack">
+          <!-- Dupliquez les items d'actualité -->
+          <article class="news-item">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1200&q=60')"></div>
+            <div class="body">
+              <h4>Nouvelle récolte 2025</h4>
+              <p>La récolte de cette saison s'annonce exceptionnelle : rendements en hausse grâce à de meilleures semences et pratiques agricoles respectueuses de l'environnement. Nous travaillons étroitement avec les coopératives locales pour assurer une traçabilité totale et soutenir l'économie rurale.</p>
+              <div style="margin-top:10px"><a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20plus%20d%27infos%20sur%20la%20nouvelle%20r%C3%A9colte">Contacter</a></div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60')"></div>
+            <div class="body">
+              <h4>Atelier de transformation</h4>
+              <p>Nous avons ouvert un petit atelier de transformation à Brazzaville pour améliorer la valeur ajoutée locale : tri, emballage et conditionnement selon des normes hygiéniques strictes.</p>
+              <div style="margin-top:10px"><a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20l%27atelier">Contacter</a></div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60')"></div>
+            <div class="body">
+              <h4>Partenariat local</h4>
+              <p>Grain d'Or s'associe à des organisations locales pour former 50 agriculteurs aux bonnes pratiques agricoles et à la gestion durable des sols.</p>
+              <div style="margin-top:10px"><a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20participer%20au%20partenariat">Contacter</a></div>
+            </div>
+          </article>
+
+          <!-- Répéter les éléments pour donner l'illusion d'un track infini -->
+          <article class="news-item">
+            <div class="media" style="background-image:url('https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1200&q=60')"></div>
+            <div class="body">
+              <h4>Nouvelle récolte 2025 — suite</h4>
+              <p>Informations complémentaires sur la distribution et les points de vente pour la récolte en cours.</p>
+              <div style="margin-top:10px"><a class="btn-wh" href="https://wa.me/+242066964823?text=Bonjour%20Grain%20d%27Or%20%2C%20je%20veux%20commander%20la%20nouvelle%20r%C3%A9colte">Contacter</a></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="contact">
+      <div class="section-title">
+        <span class="tag">Contact</span>
+        <h2>Envoyer un message / localisation</h2>
+      </div>
+
+      <div class="contact">
+        <div class="form">
+          <label>Nom</label>
+          <input id="name" placeholder="Votre nom" />
+          <label>Téléphone</label>
+          <input id="phone" placeholder="Ex: +24206xxxxxxx" />
+          <label>Message</label>
+          <textarea id="message" rows="6" placeholder="Bonjour, je souhaite..." ></textarea>
+          <button id="sendBtn">Envoyer via WhatsApp</button>
+
+          <p style="font-size:13px;color:#5b6b5a;margin-top:10px">Le bouton ouvre WhatsApp avec votre message prêt à être envoyé à Grain d'Or.</p>
+        </div>
+
+        <div>
+          <div class="map-card">
+            <!-- Carte : changez l'iframe src pour vos coordonnées exactes -->
+            <iframe width="100%" height="420" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12751.123456789012!2d15.2389!3d-4.259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNC4yNTk2NTAwLCAxNS4yMzg5MDA!5e0!3m2!1sfr!2scd!4v0000000000000" ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>Grain d'Or</strong>
+          <div style="margin-top:6px">Adresse: Brazzaville, République du Congo</div>
+        </div>
+        <div class="phone">Tel / WhatsApp: +242 06 52 36 885</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Form -> Open WhatsApp with prefilled message
+    const sendBtn = document.getElementById('sendBtn');
+    sendBtn.addEventListener('click', ()=>{
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const textParts = [];
+      if(name) textParts.push('Nom: '+name);
+      if(phone) textParts.push('Tel: '+phone);
+      if(message) textParts.push('Message: '+message);
+      const text = encodeURIComponent(textParts.join('\n'));
+      const phoneTarget = '+242066964823'; // changez si besoin
+      const url = `https://wa.me/${phoneTarget.replace(/\+/g,'')}?text=${text}`;
+      window.open(url, '_blank');
+    });
+
+    // Improve news track width duplication to create smooth loop depending on content width
+    (function(){
+      const track = document.getElementById('newsTrack');
+      // Duplicate children until track width > container*2 to make smooth loop
+      function ensureLoop(){
+        const wrap = track.parentElement;
+        const need = wrap.clientWidth*2;
+        let total = 0;
+        Array.from(track.children).forEach(c=> total += c.getBoundingClientRect().width + 12);
+        if(total < need){
+          // clone nodes
+          const nodes = Array.from(track.children).map(n=> n.cloneNode(true));
+          nodes.forEach(n=> track.appendChild(n));
+        }
+      }
+      window.addEventListener('load', ensureLoop);
+      window.addEventListener('resize', () => setTimeout(ensureLoop,300));
+    })();
+  </script>
+</body>
+</html>
